@@ -1,0 +1,32 @@
+//
+// build.gradle in TeamCode
+//
+apply plugin: 'com.android.dynamic-feature'
+apply from: '../build.dependencies.gradle'
+
+android {
+    namespace = 'org.firstinspires.ftc.teamcode'
+    compileSdk 34
+
+    defaultConfig {
+        minSdkVersion 24
+        //noinspection ExpiredTargetSdkVersion
+        targetSdkVersion 28
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        jniLibs {
+            pickFirsts += ['**/*.so']
+        }
+        jniLibs.useLegacyPackaging true
+    }
+}
+
+dependencies {
+    implementation project(path: ':FtcRobotController')
+}
