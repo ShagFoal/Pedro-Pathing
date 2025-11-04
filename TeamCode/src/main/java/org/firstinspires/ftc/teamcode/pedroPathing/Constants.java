@@ -14,9 +14,9 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Constants {
     public static FollowerConstants followerConstants = new FollowerConstants()
-            .forwardZeroPowerAcceleration(-37.483424)
-            .lateralZeroPowerAcceleration(-60.4782987499)
-            .mass(9.89); // TODO сюда нужно написать массу
+            .forwardZeroPowerAcceleration(12) // forward zero power acceleration
+            .lateralZeroPowerAcceleration(123) // latteral zero power acceleration
+            .mass(10.15); // TODO сюда нужно написать массу
 
     public static PathConstraints pathConstraints = new PathConstraints(0.99, 100, 1, 1);
 
@@ -30,22 +30,22 @@ public class Constants {
 
     public static MecanumConstants driveConstants = new MecanumConstants()
             .maxPower(1)
-            .rightFrontMotorName("rightFront")
-            .rightRearMotorName("rightBack")
-            .leftRearMotorName("leftBack")
-            .leftFrontMotorName("leftFront")
+            .rightFrontMotorName("RF")
+            .rightRearMotorName("RB")
+            .leftRearMotorName("LB")
+            .leftFrontMotorName("LF")
             .leftFrontMotorDirection(DcMotorSimple.Direction.REVERSE)
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
             .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
             .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD)
-            .xVelocity(18.875915)
-            .yVelocity(60.7999)
+            .xVelocity(67) // forward velocity tuner
+            .yVelocity(49) // lateral velocity tuner
             .useBrakeModeInTeleOp(true);
 
 
     public static PinpointConstants localizerConstants = new PinpointConstants()
-            .forwardPodY(-5.21)
-            .strafePodX(2.17) // 2.17
+            .forwardPodY(-5.91)
+            .strafePodX(-2.76)
             .distanceUnit(DistanceUnit.INCH)
             .hardwareMapName("pinpoint")
             .encoderResolution(GoBildaPinpointDriver.GoBildaOdometryPods.goBILDA_4_BAR_POD)
