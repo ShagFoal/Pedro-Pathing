@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.pedroPathing;
 
+import com.pedropathing.control.PIDFCoefficients;
 import com.pedropathing.follower.Follower;
 import com.pedropathing.follower.FollowerConstants;
 import com.pedropathing.ftc.FollowerBuilder;
@@ -14,9 +15,12 @@ import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class Constants {
     public static FollowerConstants followerConstants = new FollowerConstants()
-            .forwardZeroPowerAcceleration(12) // forward zero power acceleration
-            .lateralZeroPowerAcceleration(123) // latteral zero power acceleration
-            .mass(10.15); // TODO сюда нужно написать массу
+            .forwardZeroPowerAcceleration(-35.1715111) // forward zero power acceleration
+            .lateralZeroPowerAcceleration(-63.98226)
+            .mass(10.15)
+            .headingPIDFCoefficients(new PIDFCoefficients(1,0,0.02,0.01))
+            .translationalPIDFCoefficients(new PIDFCoefficients(0.092,0,0.013,0.022));
+
 
     public static PathConstraints pathConstraints = new PathConstraints(0.99, 100, 1, 1);
 
@@ -25,6 +29,7 @@ public class Constants {
                 .pinpointLocalizer(localizerConstants)
                 .pathConstraints(pathConstraints)
                 .mecanumDrivetrain(driveConstants)
+
                 .build();
     }
 
@@ -38,8 +43,8 @@ public class Constants {
             .leftRearMotorDirection(DcMotorSimple.Direction.REVERSE)
             .rightFrontMotorDirection(DcMotorSimple.Direction.FORWARD)
             .rightRearMotorDirection(DcMotorSimple.Direction.FORWARD)
-            .xVelocity(67) // forward velocity tuner
-            .yVelocity(49) // lateral velocity tuner
+            .xVelocity(61.6689108226) // forward velocity tuner
+            .yVelocity(64.6838002122) // lateral velocity tuner
             .useBrakeModeInTeleOp(true);
 
 

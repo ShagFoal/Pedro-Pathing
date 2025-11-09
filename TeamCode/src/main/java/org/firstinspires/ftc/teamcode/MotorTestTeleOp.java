@@ -13,10 +13,10 @@ public class MotorTestTeleOp extends LinearOpMode {
     public void runOpMode() {
 
         // Подключаем моторы по имени из конфигурации
-        motor0 = hardwareMap.get(DcMotor.class, "motor0");
-        motor1 = hardwareMap.get(DcMotor.class, "motor1");
-        motor2 = hardwareMap.get(DcMotor.class, "motor2");
-        motor3 = hardwareMap.get(DcMotor.class, "motor3");
+        motor0 = hardwareMap.get(DcMotor.class, "LF");
+        motor1 = hardwareMap.get(DcMotor.class, "LB");
+        motor2 = hardwareMap.get(DcMotor.class, "RF");
+        motor3 = hardwareMap.get(DcMotor.class, "RB");
 
         telemetry.addLine("Готов к тесту. Нажми PLAY.");
         telemetry.update();
