@@ -22,6 +22,7 @@ public class MovementAutonomous extends OpMode {
     @Override
     public void init() {
         // --- Определяем ключевые точки --- 
+
         Pose startPose = new Pose(0, 0, 0); // Начало в (0,0)
         Pose left10Pose = new Pose(0, 10, 0); // Точка в 10 ед. по Y
         Pose left15Pose = new Pose(0, 15, 0); // Точка в 15 ед. по Y
